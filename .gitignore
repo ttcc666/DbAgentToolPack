@@ -1,0 +1,27 @@
+# Build outputs
+**/bin/
+**/obj/
+/nupkg/
+*.nupkg
+*.snupkg
+
+# Visual Studio / IDE
+/.vs/
+/.vscode/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Test / packaging artifacts
+/TestResults/
+/artifacts/
+
+# Local tool metadata
+/.ace-tool/
+
+# Local DbAgent config and runtime data
+/appsettings.json
+/databases.json
+/data/

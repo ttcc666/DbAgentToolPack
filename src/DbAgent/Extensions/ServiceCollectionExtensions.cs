@@ -26,6 +26,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<ICommandHandler, DoctorCommandHandler>();
         services.AddSingleton<ICommandHandler, ModelsCommandHandler>();
         services.AddSingleton<ICommandHandler, ChatCommandHandler>();
+        services.AddSingleton<ICommandHandler, AskCommandHandler>();
         services.AddSingleton<CommandDispatcher>();
 
         return services;

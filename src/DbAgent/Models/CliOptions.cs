@@ -7,6 +7,8 @@ public sealed class CliOptions
     public string? ModelName { get; private set; }
     public bool Force { get; private set; }
     public bool ShowHelp { get; private set; }
+    public string? Query { get; private set; }
+    public bool AutoApprove { get; private set; }
 
     public static CliOptions Parse(string[] args)
     {
@@ -16,6 +18,11 @@ public sealed class CliOptions
         if (queue.Count > 0 && !queue.Peek().StartsWith("--", StringComparison.Ordinal))
         {
             result.Command = queue.Dequeue().Trim().ToLowerInvariant();
+        }
+
+        if (queue.Count > 0 && !queue.Peek().StartsWith("--", StringComparison.Ordinal))
+        {
+            result.Query = queue.Dequeue();
         }
 
         while (queue.Count > 0)
@@ -39,6 +46,11 @@ public sealed class CliOptions
 
                 case "--force":
                     result.Force = true;
+                    break;
+
+                case "--yes":
+                case "-y":
+                    result.AutoApprove = true;
                     break;
 
                 default:

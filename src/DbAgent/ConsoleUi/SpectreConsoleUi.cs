@@ -93,6 +93,8 @@ public sealed class SpectreConsoleUi : IConsoleUi
         [cyan]dbagent init[/]                    生成默认配置到 ~/.dbagent/
         [cyan]dbagent init --force[/]            覆盖默认配置
         [cyan]dbagent models[/]                  查看已配置模型
+        [cyan]dbagent ask "问题"[/]               一次性查询，结果输出到 stdout
+        [cyan]dbagent ask "问题" --yes[/]         自动批准所有工具调用
         [cyan]dbagent doctor[/]                  检查模型、MCP、数据库配置
         [cyan]dbagent doctor --model <name>[/]   检查指定模型配置
         [cyan]dbagent --help[/]                  查看帮助
